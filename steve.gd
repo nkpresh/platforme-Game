@@ -13,7 +13,7 @@ func _physics_process(delta):
 		
 	velocity.y+=GRAVITY	
 	
-	if Input.is_action_pressed("jump"):
+	if Input.is_action_just_pressed("jump"):
 		velocity.y=FORCEJUMP
 	
 	velocity=move_and_slide(velocity)
