@@ -16,7 +16,6 @@ func _physics_process(delta):
 		$Sprite.flip_h=true
 	else:
 		$Sprite.play("idle")
-		
 	if not is_on_floor():
 		$Sprite.play("jump")
 		
