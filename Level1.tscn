@@ -58,4 +58,7 @@ editor_draw_limits = true
 [node name="Purple Sky" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/Purple Sky"]
+position = Vector2( 61.4306, -28.4678 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
+centered = false
