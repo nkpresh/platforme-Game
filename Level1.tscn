@@ -9,11 +9,11 @@
 position = Vector2( -889.656, 53.3191 )
 
 [node name="Camera2D" type="Camera2D" parent="steve"]
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 30, 30 )
 current = true
 zoom = Vector2( 2, 2 )
 limit_left = -1200
-limit_top = -500
+limit_top = -250
 limit_right = 13000
 limit_bottom = 550
 limit_smoothed = true
