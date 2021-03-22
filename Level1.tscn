@@ -56,6 +56,7 @@ editor_draw_limits = true
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Purple Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1664, 1248 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/Purple Sky"]
 position = Vector2( 61.4306, -28.4678 )
