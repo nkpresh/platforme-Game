@@ -66,6 +66,18 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
 centered = false
 
+[node name="back Blocks" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color( 0.635294, 0.254902, 0.72549, 0.215686 )
+position = Vector2( 0, -1000 )
+motion_scale = Vector2( 0.25, 0.25 )
+motion_offset = Vector2( 0, -500 )
+motion_mirroring = Vector2( 2560, 1920 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/back Blocks"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+centered = false
+
 [node name="middle blocks" type="ParallaxLayer" parent="ParallaxBackground"]
 modulate = Color( 0.584314, 0.396078, 0.698039, 0.301961 )
 motion_scale = Vector2( 0.4, 0.4 )
@@ -78,7 +90,7 @@ texture = ExtResource( 5 )
 centered = false
 
 [node name="nearby Blocks" type="ParallaxLayer" parent="ParallaxBackground"]
-modulate = Color( 1, 1, 1, 0.560784 )
+modulate = Color( 0.490196, 0.301961, 0.301961, 0.25098 )
 motion_scale = Vector2( 0.7, 0.6 )
 motion_mirroring = Vector2( 1120, 840 )
 
