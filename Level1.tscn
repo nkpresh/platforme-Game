@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://world_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://steve.tscn" type="PackedScene" id=2]
 [ext_resource path="res://pass_throughTilest.tres" type="TileSet" id=3]
+[ext_resource path="res://assets/background/background/set2_background.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 288, 32 )
@@ -35,14 +36,14 @@ shape = SubResource( 2 )
 one_way_collision = true
 
 [node name="steve" parent="." instance=ExtResource( 2 )]
-position = Vector2( -889.656, 53.3191 )
+position = Vector2( 61.7692, -12.6064 )
 
 [node name="Camera2D" type="Camera2D" parent="steve"]
 scale = Vector2( 3, 3 )
 current = true
 zoom = Vector2( 1.2, 1.2 )
 limit_left = -1200
-limit_top = -250
+limit_top = -750
 limit_right = 13000
 limit_bottom = 800
 limit_smoothed = true
@@ -51,3 +52,10 @@ drag_margin_v_enabled = true
 smoothing_enabled = true
 drag_margin_left = 0.3
 editor_draw_limits = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Purple Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Purple Sky"]
+texture = ExtResource( 4 )
