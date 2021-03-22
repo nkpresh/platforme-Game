@@ -57,7 +57,8 @@ editor_draw_limits = true
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Purple Sky" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 1280, 960 )
+motion_scale = Vector2( 1.5, 1.5 )
+motion_mirroring = Vector2( 1536, 960 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/Purple Sky"]
 position = Vector2( 61.4306, -28.4678 )
@@ -66,6 +67,7 @@ texture = ExtResource( 4 )
 centered = false
 
 [node name="nearby Blocks" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.7, 0.6 )
 motion_mirroring = Vector2( 1120, 840 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/nearby Blocks"]
