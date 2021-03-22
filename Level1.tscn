@@ -9,14 +9,21 @@
 position = Vector2( -889.656, 53.3191 )
 
 [node name="Camera2D" type="Camera2D" parent="steve"]
+scale = Vector2( 2, 2 )
 current = true
 zoom = Vector2( 2, 2 )
 limit_left = -1200
 limit_top = -500
 limit_right = 13000
-limit_bottom = 800
+limit_bottom = 550
+limit_smoothed = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
+smoothing_enabled = true
+drag_margin_left = 0.5
+drag_margin_top = 0.5
+drag_margin_right = 0.5
+drag_margin_bottom = 0.5
 editor_draw_limits = true
 
 [node name="TileMap" type="TileMap" parent="."]
