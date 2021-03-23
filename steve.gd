@@ -30,4 +30,4 @@ func _physics_process(delta):
 
 
 func _on_fallzone_body_entered(body):
-get_tree().change_scene()
+	get_tree().change_scene()
