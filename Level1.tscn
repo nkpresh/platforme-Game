@@ -125,8 +125,8 @@ shape = SubResource( 3 )
 position = Vector2( -206.627, 173.869 )
 
 [node name="Coin2" parent="." instance=ExtResource( 6 )]
-position = Vector2( -297.341, -78.1152 )
+position = Vector2( -251.984, -68.0358 )
 
 [node name="Coin3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 52.9169, -55.4365 )
+position = Vector2( 55.4367, -70.5556 )
 [connection signal="body_entered" from="fallzone" to="steve" method="_on_fallzone_body_entered"]
