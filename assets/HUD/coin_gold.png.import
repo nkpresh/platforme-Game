@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/coin_gold.png-1cb8f8b1d4c188b7bc74e70508bf326e.stex"
+path="res://.import/coin_gold.png-494058023e50d5e3f37f5a6de739a747.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Platformer12-HUD-coin-font/HUD/coin_gold.png"
-dest_files=[ "res://.import/coin_gold.png-1cb8f8b1d4c188b7bc74e70508bf326e.stex" ]
+source_file="res://assets/HUD/coin_gold.png"
+dest_files=[ "res://.import/coin_gold.png-494058023e50d5e3f37f5a6de739a747.stex" ]
 
 [params]
 
