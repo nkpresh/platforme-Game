@@ -140,15 +140,6 @@ __meta__ = {
 position = Vector2( -6.35681, 0 )
 shape = SubResource( 3 )
 
-[node name="Coin" parent="." instance=ExtResource( 6 )]
-position = Vector2( -206.627, 173.869 )
-
-[node name="Coin2" parent="." instance=ExtResource( 6 )]
-position = Vector2( -251.984, -68.0358 )
-
-[node name="Coin3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 55.4367, -70.5556 )
-
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource( 9 )
 
@@ -197,4 +188,18 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( -256, 192 )
+
+[node name="Coin" parent="Node2D" instance=ExtResource( 6 )]
+
+[node name="Coin2" parent="Node2D" instance=ExtResource( 6 )]
+position = Vector2( 128, -256 )
+
+[node name="Coin3" parent="Node2D" instance=ExtResource( 6 )]
+position = Vector2( 1024, 0 )
 [connection signal="body_entered" from="fallzone" to="steve" method="_on_fallzone_body_entered"]
+[connection signal="coin_collected" from="Node2D/Coin" to="HUD" method="_on_Coin_coin_collected"]
+[connection signal="coin_collected" from="Node2D/Coin2" to="HUD" method="_on_Coin_coin_collected"]
+[connection signal="coin_collected" from="Node2D/Coin3" to="HUD" method="_on_Coin_coin_collected"]
