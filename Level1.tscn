@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://world_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://steve.tscn" type="PackedScene" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://assets/background/background/set2_background.png" type="Texture" id=4]
 [ext_resource path="res://assets/background/background/set2_tiles.png" type="Texture" id=5]
 [ext_resource path="res://Coin.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/HUD/coin_gold.png" type="Texture" id=7]
+[ext_resource path="res://assets/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://HUD.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 288, 32 )
@@ -22,6 +25,14 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=5]
+size = 52
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 52
+font_data = ExtResource( 8 )
 
 [node name="Level1" type="Node2D"]
 
@@ -113,6 +124,7 @@ motion_scale = Vector2( 0.7, 0.6 )
 motion_mirroring = Vector2( 1120, 840 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/nearby Blocks"]
+position = Vector2( 0, 1.33484 )
 scale = Vector2( 1.75, 1.75 )
 texture = ExtResource( 5 )
 centered = false
@@ -138,13 +150,50 @@ position = Vector2( -251.984, -68.0358 )
 position = Vector2( 55.4367, -70.5556 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource( 9 )
 
 [node name="Panel" type="Panel" parent="HUD"]
 margin_left = 52.0
-margin_top = 37.0
+margin_top = 37.5
 margin_right = 314.0
-margin_bottom = 150.0
+margin_bottom = 150.5
 custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="HUD"]
+margin_left = 81.5
+margin_top = 57.5
+margin_right = 157.5
+margin_bottom = 129.5
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="x" type="Label" parent="HUD"]
+margin_left = 172.522
+margin_top = 59.2646
+margin_right = 212.522
+margin_bottom = 122.265
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.835294, 0.694118, 0.141176, 1 )
+text = "x"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coins" type="Label" parent="HUD"]
+margin_left = 219.5
+margin_top = 63.5
+margin_right = 330.5
+margin_bottom = 126.5
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.835294, 0.694118, 0.141176, 1 )
+text = "##"
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
