@@ -6,6 +6,7 @@ export var direction=-1
 func _ready():
 	if direction==1:
 		$Sprite.flip_h=true
+	$floor_Checker.position.x=$CollisionShape2D.shape.get_extents().x*direction
 	
 	
 func _physics_process(delta):
