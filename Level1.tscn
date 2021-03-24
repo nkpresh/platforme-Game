@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://world_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://steve.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/HUD/coin_gold.png" type="Texture" id=7]
 [ext_resource path="res://assets/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://HUD.gd" type="Script" id=9]
+[ext_resource path="res://enemy.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 288, 32 )
@@ -189,17 +190,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="coins" type="Node2D" parent="."]
 position = Vector2( -256, 192 )
 
-[node name="Coin" parent="Node2D" instance=ExtResource( 6 )]
+[node name="Coin" parent="coins" instance=ExtResource( 6 )]
 
-[node name="Coin2" parent="Node2D" instance=ExtResource( 6 )]
+[node name="Coin2" parent="coins" instance=ExtResource( 6 )]
 position = Vector2( 128, -256 )
 
-[node name="Coin3" parent="Node2D" instance=ExtResource( 6 )]
+[node name="Coin3" parent="coins" instance=ExtResource( 6 )]
 position = Vector2( 1024, 0 )
+
+[node name="enemies" type="Node" parent="."]
+
+[node name="enemy" parent="enemies" instance=ExtResource( 10 )]
+position = Vector2( -640, 128 )
 [connection signal="body_entered" from="fallzone" to="steve" method="_on_fallzone_body_entered"]
-[connection signal="coin_collected" from="Node2D/Coin" to="HUD" method="_on_Coin_coin_collected"]
-[connection signal="coin_collected" from="Node2D/Coin2" to="HUD" method="_on_Coin_coin_collected"]
-[connection signal="coin_collected" from="Node2D/Coin3" to="HUD" method="_on_Coin_coin_collected"]
+[connection signal="coin_collected" from="coins/Coin" to="HUD" method="_on_Coin_coin_collected"]
+[connection signal="coin_collected" from="coins/Coin2" to="HUD" method="_on_Coin_coin_collected"]
+[connection signal="coin_collected" from="coins/Coin3" to="HUD" method="_on_Coin_coin_collected"]
