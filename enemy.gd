@@ -13,7 +13,7 @@ func _ready():
 	
 func _physics_process(delta):
 	
-	if is_on_wall() or not $floor_Checker.is_colliding() and is_on_floor():
+	if is_on_wall() or not $floor_Checker.is_colliding() and detects_cliffs and is_on_floor():
 		direction*=-1
 		$Sprite.flip_h=not $Sprite.flip_h
 		$floor_Checker.position.x=$CollisionShape2D.shape.get_extents().x*direction
