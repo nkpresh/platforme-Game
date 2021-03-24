@@ -208,6 +208,7 @@ position = Vector2( -832, 192 )
 
 [node name="enemy2" parent="enemies" instance=ExtResource( 10 )]
 position = Vector2( -576, 192 )
+direction = 1
 [connection signal="body_entered" from="fallzone" to="steve" method="_on_fallzone_body_entered"]
 [connection signal="coin_collected" from="coins/Coin" to="HUD" method="_on_Coin_coin_collected"]
 [connection signal="coin_collected" from="coins/Coin2" to="HUD" method="_on_Coin_coin_collected"]

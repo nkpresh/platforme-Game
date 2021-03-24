@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var velocity=Vector2()
-var direction=-1
+export var direction=-1
 
 func _ready():
 	pass
