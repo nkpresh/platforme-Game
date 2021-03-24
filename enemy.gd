@@ -14,6 +14,7 @@ func _physics_process(delta):
 	if is_on_wall():
 		direction*=-1
 		$Sprite.flip_h=not $Sprite.flip_h
+		$floor_Checker.position.x=$CollisionShape2D.shape.get_extents().x*direction
 	
 	velocity.y+=20
 	
