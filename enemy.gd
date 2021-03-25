@@ -36,13 +36,13 @@ func _on_top_checker_body_entered(body):
 	$sides_checker.set_collision_layer_bit(4,false)
 	$sides_checker.set_collision_mask_bit(0,false)
 	$Timer.start()
-	
+	body.bounce()
 	
 
 
 func _on_sides_checker_body_entered(body):
 	print("entered")
-	get_tree().change_scene("res://Level1.tscn")
+	body.ouch(position.x)
 
 
 func _on_Timer_timeout():

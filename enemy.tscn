@@ -67,6 +67,7 @@ position = Vector2( 0, 5.5909 )
 shape = SubResource( 4 )
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true
 [connection signal="body_entered" from="top_checker" to="." method="_on_top_checker_body_entered"]
 [connection signal="body_entered" from="sides_checker" to="." method="_on_sides_checker_body_entered"]
