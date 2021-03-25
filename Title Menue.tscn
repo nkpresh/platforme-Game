@@ -1,0 +1,14 @@
+[gd_scene format=2]
+
+[node name="Title Menue" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_scale = Vector2( 25.6233, 14.7035 )
+color = Color( 0.168627, 0.133333, 0.466667, 1 )
