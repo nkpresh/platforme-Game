@@ -37,7 +37,6 @@ position = Vector2( -5.69328, -18.4815 )
 scale = Vector2( 1.29696, 1.03095 )
 frames = SubResource( 2 )
 animation = "crawl"
-frame = 1
 playing = true
 offset = Vector2( 4.48936, 16.1877 )
 
@@ -70,6 +69,8 @@ shape = SubResource( 4 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="Area2D" type="Area2D" parent="."]
 [connection signal="body_entered" from="top_checker" to="." method="_on_top_checker_body_entered"]
 [connection signal="body_entered" from="sides_checker" to="." method="_on_sides_checker_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
