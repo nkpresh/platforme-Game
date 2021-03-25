@@ -37,6 +37,7 @@ position = Vector2( -5.69328, -18.4815 )
 scale = Vector2( 1.29696, 1.03095 )
 frames = SubResource( 2 )
 animation = "crawl"
+frame = 1
 playing = true
 offset = Vector2( 4.48936, 16.1877 )
 
