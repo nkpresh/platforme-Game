@@ -86,7 +86,7 @@ motion_offset = Vector2( 0, -500 )
 motion_mirroring = Vector2( 2560, 1920 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/back Blocks"]
-position = Vector2( 181.428, 40.3175 )
+position = Vector2( 181.428, 38.8192 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 5 )
 centered = false
