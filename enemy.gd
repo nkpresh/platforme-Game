@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+var speed=50
 var velocity=Vector2()
 export var direction=-1
 export var detects_cliffs=true
@@ -20,6 +21,24 @@ func _physics_process(delta):
 	
 	velocity.y+=20
 	
-	velocity.x=50*direction
+	velocity.x=speed*direction
 	
 	velocity=move_and_slide(velocity,Vector2.UP)
+
+
+func _on_top_checker_body_entered(body):
+	$Sprite.play("squashed")
+	speed=0
+	set_collision_layer_bit(4,false)
+	set_collision_mask_bit(0,false)
+	$top_checker.set_collision_layer_bit(4,false)
+	$top_checker.set_collision_mask_bit(0,false)
+	$sides_checker.set_collision_layer_bit(4,false)
+	$sides_checker.set_collision_mask_bit(0,false)
+	
+	
+
+
+func _on_sides_checker_body_entered(body):
+	print("entered")
+	get_tree().change_scene("res://Level1.tscn")
