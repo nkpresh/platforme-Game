@@ -48,6 +48,8 @@ func ouch(var enemyposx):
 		velocity.x=800
 	Input.action_release("left")
 	Input.action_release("right")
+	
+	$Timer.start()
 
 
 func _on_Timer_timeout():

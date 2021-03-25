@@ -10,6 +10,8 @@ func _ready():
 		$Sprite.flip_h=true
 	$floor_Checker.position.x=$CollisionShape2D.shape.get_extents().x*direction
 	$floor_Checker.enabled=detects_cliffs
+	if detects_cliffs:
+		set_modulate(Color(1.2,0.5,1))
 	
 	
 func _physics_process(delta):
