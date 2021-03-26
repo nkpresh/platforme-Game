@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/UI/grey_button04.png" type="Texture" id=1]
 [ext_resource path="res://assets/more fonts/KiriFont.ttf" type="DynamicFontData" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/HUD/coin_gold.png" type="Texture" id=6]
 [ext_resource path="res://assets/enemy-sprites/enemies/slimeBlue_blue.png" type="Texture" id=7]
 [ext_resource path="res://assets/UI/grey_button13.png" type="Texture" id=8]
+[ext_resource path="res://PlayButton.gd" type="Script" id=9]
 
 [sub_resource type="DynamicFont" id=6]
 size = 40
@@ -64,6 +65,10 @@ custom_colors/font_color_hover = Color( 1, 0.184314, 0.921569, 1 )
 custom_colors/font_color_pressed = Color( 1, 0, 0, 1 )
 text = "PLAY!"
 flat = true
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="."]
 margin_left = 136.346
@@ -270,3 +275,4 @@ margin_bottom = 27.0961
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.815686, 0.768627, 0.0470588, 1 )
 text = "ITEMS:"
+[connection signal="pressed" from="ColorRect/PlayButton" to="ColorRect/PlayButton" method="_on_PlayButton_pressed"]
