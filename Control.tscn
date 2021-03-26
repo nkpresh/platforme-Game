@@ -1,8 +1,17 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/UI/grey_button04.png" type="Texture" id=1]
 [ext_resource path="res://assets/more fonts/KiriFont.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/UI/arrow-UP.png" type="Texture" id=4]
+[ext_resource path="res://assets/player-sprites/player/platformChar_idle.png" type="Texture" id=5]
+[ext_resource path="res://assets/HUD/coin_gold.png" type="Texture" id=6]
+[ext_resource path="res://assets/enemy-sprites/enemies/slimeBlue_blue.png" type="Texture" id=7]
+[ext_resource path="res://assets/UI/grey_button13.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=6]
+size = 40
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
@@ -29,7 +38,7 @@ font_data = ExtResource( 3 )
 size = 20
 font_data = ExtResource( 2 )
 
-[node name="Control" type="Control"]
+[node name="Title Menue" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -44,6 +53,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="PlayButton" type="Button" parent="ColorRect"]
+margin_left = 384.0
+margin_top = 224.0
+margin_right = 608.0
+margin_bottom = 288.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.478431, 1, 0.121569, 1 )
+custom_colors/font_color_hover = Color( 1, 0.184314, 0.921569, 1 )
+custom_colors/font_color_pressed = Color( 1, 0, 0, 1 )
+text = "PLAY!"
+flat = true
+
 [node name="Label" type="Label" parent="."]
 margin_left = 136.346
 margin_top = 77.912
@@ -54,20 +75,20 @@ custom_colors/font_color = Color( 0.329412, 0.462745, 1, 1 )
 text = "Platform Game!"
 
 [node name="Panel" type="Panel" parent="."]
-margin_left = 35.1085
-margin_top = 356.895
-margin_right = 430.109
-margin_bottom = 562.895
+margin_left = 32.0
+margin_top = 320.0
+margin_right = 384.0
+margin_bottom = 512.0
 custom_styles/panel = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="space bar" type="TextureRect" parent="Panel"]
-margin_left = 72.7838
-margin_top = 80.1555
-margin_right = 223.784
-margin_bottom = 113.156
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 215.0
+margin_bottom = 97.0
 texture = ExtResource( 1 )
 expand = true
 __meta__ = {
@@ -83,7 +104,7 @@ custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "SPACE"
 
-[node name="Label2" type="Label" parent="Panel/space bar"]
+[node name="=jump" type="Label" parent="Panel/space bar"]
 margin_left = 162.984
 margin_top = 1.13821
 margin_right = 256.984
@@ -99,3 +120,153 @@ margin_bottom = 27.0961
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.815686, 0.768627, 0.0470588, 1 )
 text = "CONTROLS:"
+
+[node name="keyL" type="TextureRect" parent="Panel"]
+margin_left = 96.0
+margin_top = 128.0
+margin_right = 132.0
+margin_bottom = 161.0
+texture = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="left" type="TextureRect" parent="Panel/keyL"]
+margin_left = 7.57275
+margin_top = 28.5088
+margin_right = 32.5728
+margin_bottom = 48.5088
+rect_rotation = 270.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="keyR" type="TextureRect" parent="Panel"]
+margin_left = 160.0
+margin_top = 128.0
+margin_right = 196.0
+margin_bottom = 161.0
+texture = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="right" type="TextureRect" parent="Panel/keyR"]
+margin_left = 29.2262
+margin_top = 4.34558
+margin_right = 54.2262
+margin_bottom = 24.3456
+rect_rotation = 90.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="=jump2" type="Label" parent="Panel"]
+margin_left = 224.0
+margin_top = 128.0
+margin_right = 319.0
+margin_bottom = 159.0
+custom_fonts/font = SubResource( 4 )
+text = "=MOVE!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="."]
+margin_left = 608.0
+margin_top = 320.0
+margin_right = 992.0
+margin_bottom = 512.0
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="space bar" type="TextureRect" parent="Panel2"]
+margin_left = 24.3051
+margin_top = 53.0305
+margin_right = 70.3051
+margin_bottom = 91.0305
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Panel2/space bar"]
+margin_left = 58.7489
+margin_top = 10.9381
+margin_right = 152.749
+margin_bottom = 41.9381
+custom_fonts/font = SubResource( 4 )
+text = "=You!"
+
+[node name="space bar2" type="TextureRect" parent="Panel2"]
+margin_left = 198.476
+margin_top = 53.9214
+margin_right = 244.476
+margin_bottom = 91.9214
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Panel2/space bar2"]
+margin_left = 58.7489
+margin_top = 10.9381
+margin_right = 152.749
+margin_bottom = 41.9381
+custom_fonts/font = SubResource( 4 )
+text = "=enemy"
+
+[node name="space bar3" type="TextureRect" parent="Panel2"]
+margin_left = 149.0
+margin_top = 110.0
+margin_right = 189.0
+margin_bottom = 148.0
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Panel2/space bar3"]
+margin_left = 51.1762
+margin_top = 7.37448
+margin_right = 145.176
+margin_bottom = 38.3745
+custom_fonts/font = SubResource( 4 )
+text = "to win"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Panel2/space bar3"]
+margin_left = -111.858
+margin_top = 9.15631
+margin_right = -9.85831
+margin_bottom = 40.1563
+custom_fonts/font = SubResource( 4 )
+text = "Collect 3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel2"]
+margin_left = 28.1764
+margin_top = 13.0961
+margin_right = 68.1764
+margin_bottom = 27.0961
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.815686, 0.768627, 0.0470588, 1 )
+text = "ITEMS:"
