@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://MainMenuButton.gd" type="Script" id=1]
 [ext_resource path="res://assets/more fonts/KiriFont.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/more fonts/Sniglet-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/Music/sounds/jingles_PIZZA07.ogg" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -54,4 +55,8 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
 [connection signal="pressed" from="MainMenuButton" to="MainMenuButton" method="_on_MainMenuButton_pressed"]

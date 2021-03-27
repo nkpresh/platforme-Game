@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Retro Beat.ogg-4a0eb92cb830f35487a726f4cd2b8483.oggs
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

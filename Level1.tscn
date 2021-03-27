@@ -219,7 +219,6 @@ editor_draw_limits = true
 
 [node name="MusicLevel" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
-pitch_scale = 0.01
 autoplay = true
 [connection signal="body_entered" from="fallzone" to="steve" method="_on_fallzone_body_entered"]
 [connection signal="coin_collected" from="coins/Coin" to="HUD" method="_on_Coin_coin_collected"]
