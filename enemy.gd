@@ -30,6 +30,7 @@ func _physics_process(delta):
 
 func _on_top_checker_body_entered(body):
 	$Sprite.play("squashed")
+	$SoundSquash.play()
 	speed=0
 	set_collision_layer_bit(4,false)
 	set_collision_mask_bit(0,false)
