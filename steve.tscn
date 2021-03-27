@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://steve_spriteframes.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://steve.gd" type="Script" id=2]
+[ext_resource path="res://assets/Music/sounds/jump1.ogg" type="AudioStream" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 26.8663
@@ -23,4 +24,7 @@ position = Vector2( -0.44545, 14.5772 )
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="SoundJump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
