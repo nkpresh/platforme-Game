@@ -8,15 +8,15 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "squashed",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "crawl",
 "speed": 3.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "squashed",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -38,7 +38,6 @@ position = Vector2( -5.69328, -18.4815 )
 scale = Vector2( 1.29696, 1.03095 )
 frames = SubResource( 1 )
 animation = "crawl"
-frame = 1
 playing = true
 offset = Vector2( 4.48936, 16.1877 )
 
@@ -74,7 +73,8 @@ one_shot = true
 
 [node name="SoundSquash" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-volume_db = -2.0
+volume_db = 17.362
+pitch_scale = 0.94
 [connection signal="body_entered" from="top_checker" to="." method="_on_top_checker_body_entered"]
 [connection signal="body_entered" from="sides_checker" to="." method="_on_sides_checker_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

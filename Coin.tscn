@@ -51,6 +51,7 @@ anims/bounce = SubResource( 3 )
 
 [node name="SoundCoinCollect" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-pitch_scale = 0.01
+volume_db = -2.0
+pitch_scale = 1.2
 [connection signal="body_entered" from="." to="." method="_on_Coin_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
