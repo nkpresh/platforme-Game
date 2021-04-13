@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var velocity=Vector2(0,0)
-var Coins=0
+
 const SPEED=250
 const FORCEJUMP=-1100
 const GRAVITY=35
